@@ -33,7 +33,7 @@ export async function GET() {
   }
 
   try {
-    const notificationResponse = await fetch(`http://localhost:3000/api/noti`)
+    const notificationResponse = await fetch(`http://localhost:3000/api/notifications`)
     notificationData = await notificationResponse.json();
     userProfile.new_notification = notificationData.length;
   } catch (error) {

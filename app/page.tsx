@@ -25,7 +25,7 @@ export default function Home() {
 
   const getNotification = async () => {
     setLoading(true);
-    const res = await fetch(`http://localhost:3000/api/noti`)
+    const res = await fetch(`http://localhost:3000/api/notifications`)
     setAllData(await res.json());
     setLoading(false);
   }
@@ -40,9 +40,9 @@ export default function Home() {
   return (
     <div>
       <div className="button-group">
-        <button onClick={getUser}>Get User</button>
+        <button onClick={getUser}>Get User Profile</button>
         <button onClick={getMessages}>Get Messages</button>
-        <button onClick={getNotification}>Get Notification</button>
+        <button onClick={getNotification}>Get Notifications</button>
         <button onClick={getUserProfile}>Get User Profile With BFF</button>
       </div>
       <div className="dashboard">
@@ -55,7 +55,7 @@ export default function Home() {
         </div>
         <div className="right-board">
           <div>
-            <h1>User profile with BFF</h1>
+            <h1>User data with BFF</h1>
             {bffLoading ? <pre>Loading....</pre> : JSON.stringify(userProfile)}
           </div>
         </div>
